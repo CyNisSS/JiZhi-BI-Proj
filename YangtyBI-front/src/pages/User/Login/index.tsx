@@ -18,9 +18,10 @@ import {
 import { Helmet, history, useModel } from '@umijs/max';
 import { Alert, message, Tabs } from 'antd';
 import { createStyles } from 'antd-style';
-import React, { useState } from 'react';
+import React, {useEffect, useState} from 'react';
 import { flushSync } from 'react-dom';
 import Settings from '../../../../config/defaultSettings';
+import {listPostByPageUsingPost} from "@/services/JZhiBI/postController";
 const useStyles = createStyles(({ token }) => {
   return {
     action: {
@@ -85,6 +86,12 @@ const LoginMessage: React.FC<{
   );
 };
 const Login: React.FC = () => {
+  //TEST: 随便想后台port：8101端口发送一个请求，能确定前端请求是否发送到了后端
+  // useEffect(() => {
+  //   listPostByPageUsingPost().then(res=>{
+  //     console.error('res:',res)
+  //   })
+  // }, []);
   const [userLoginState, setUserLoginState] = useState<API.LoginResult>({});
   const [type, setType] = useState<string>('account');
   const { initialState, setInitialState } = useModel('@@initialState');
