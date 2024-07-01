@@ -86,7 +86,7 @@ const LoginMessage: React.FC<{
   );
 };
 const Login: React.FC = () => {
-  //TEST: 随便想后台port：8101端口发送一个请求，能确定前端请求是否发送到了后端
+  //TEST: 随便想后台port：8080端口发送一个请求，能确定前端请求是否发送到了后端
   // useEffect(() => {
   //   listPostByPageUsingPost().then(res=>{
   //     console.error('res:',res)
@@ -152,8 +152,8 @@ const Login: React.FC = () => {
             maxWidth: '75vw',
           }}
           logo={<img alt="logo" src="/logo.svg" />}
-          title="Ant Design"
-          subTitle={'Ant Design 是西湖区最具影响力的 Web 设计规范'}
+          title="吉智 BI"
+          subTitle={'吉智 BI 是西湖区最具影响力的 Web 设计规范'}
           initialValues={{
             autoLogin: true,
           }}
