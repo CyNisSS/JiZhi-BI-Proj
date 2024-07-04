@@ -11,7 +11,7 @@ import com.yupi.springbootinit.mapper.PostFavourMapper;
 import com.yupi.springbootinit.mapper.PostMapper;
 import com.yupi.springbootinit.mapper.PostThumbMapper;
 import com.yupi.springbootinit.model.dto.post.PostEsDTO;
-import com.yupi.springbootinit.model.dto.post.PostQueryRequest;
+import com.yupi.springbootinit.model.dto.chart.ChartQueryRequest;
 import com.yupi.springbootinit.model.entity.Post;
 import com.yupi.springbootinit.model.entity.PostFavour;
 import com.yupi.springbootinit.model.entity.PostThumb;
@@ -96,7 +96,7 @@ public class PostServiceImpl extends ServiceImpl<PostMapper, Post> implements Po
      * @return
      */
     @Override
-    public QueryWrapper<Post> getQueryWrapper(PostQueryRequest postQueryRequest) {
+    public QueryWrapper<Post> getQueryWrapper(ChartQueryRequest postQueryRequest) {
         QueryWrapper<Post> queryWrapper = new QueryWrapper<>();
         if (postQueryRequest == null) {
             return queryWrapper;
@@ -130,7 +130,7 @@ public class PostServiceImpl extends ServiceImpl<PostMapper, Post> implements Po
     }
 
     @Override
-    public Page<Post> searchFromEs(PostQueryRequest postQueryRequest) {
+    public Page<Post> searchFromEs(ChartQueryRequest postQueryRequest) {
         Long id = postQueryRequest.getId();
         Long notId = postQueryRequest.getNotId();
         String searchText = postQueryRequest.getSearchText();

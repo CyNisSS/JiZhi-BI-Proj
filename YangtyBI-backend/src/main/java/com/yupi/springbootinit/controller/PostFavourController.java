@@ -6,7 +6,7 @@ import com.yupi.springbootinit.common.ErrorCode;
 import com.yupi.springbootinit.common.ResultUtils;
 import com.yupi.springbootinit.exception.BusinessException;
 import com.yupi.springbootinit.exception.ThrowUtils;
-import com.yupi.springbootinit.model.dto.post.PostQueryRequest;
+import com.yupi.springbootinit.model.dto.chart.ChartQueryRequest;
 import com.yupi.springbootinit.model.dto.postfavour.PostFavourAddRequest;
 import com.yupi.springbootinit.model.dto.postfavour.PostFavourQueryRequest;
 import com.yupi.springbootinit.model.entity.Post;
@@ -70,7 +70,7 @@ public class PostFavourController {
      * @param request
      */
     @PostMapping("/my/list/page")
-    public BaseResponse<Page<PostVO>> listMyFavourPostByPage(@RequestBody PostQueryRequest postQueryRequest,
+    public BaseResponse<Page<PostVO>> listMyFavourPostByPage(@RequestBody ChartQueryRequest postQueryRequest,
             HttpServletRequest request) {
         if (postQueryRequest == null) {
             throw new BusinessException(ErrorCode.PARAMS_ERROR);

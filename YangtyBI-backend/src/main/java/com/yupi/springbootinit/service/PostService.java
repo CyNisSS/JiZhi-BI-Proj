@@ -3,7 +3,7 @@ package com.yupi.springbootinit.service;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.yupi.springbootinit.model.dto.post.PostQueryRequest;
+import com.yupi.springbootinit.model.dto.chart.ChartQueryRequest;
 import com.yupi.springbootinit.model.entity.Post;
 import com.yupi.springbootinit.model.vo.PostVO;
 import javax.servlet.http.HttpServletRequest;
@@ -30,7 +30,7 @@ public interface PostService extends IService<Post> {
      * @param postQueryRequest
      * @return
      */
-    QueryWrapper<Post> getQueryWrapper(PostQueryRequest postQueryRequest);
+    QueryWrapper<Post> getQueryWrapper(ChartQueryRequest postQueryRequest);
 
     /**
      * 从 ES 查询
@@ -38,7 +38,7 @@ public interface PostService extends IService<Post> {
      * @param postQueryRequest
      * @return
      */
-    Page<Post> searchFromEs(PostQueryRequest postQueryRequest);
+    Page<Post> searchFromEs(ChartQueryRequest postQueryRequest);
 
     /**
      * 获取帖子封装
